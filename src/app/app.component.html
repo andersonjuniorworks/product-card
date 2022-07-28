@@ -1,0 +1,18 @@
+<main class="main">
+  <div class="container">
+    <section class="card" *ngFor="let data of products">
+      <img class="card__img" [src]="data.image" [alt]="data.description" />
+      <div class="card__name">
+        <a href="#">{{ data.description }}</a>
+      </div>
+      <div class="price">
+        <p class="price__value price__value--old">
+          {{ data.oldPrice | currency: 'BRL' }}
+        </p>
+        <p class="price__value">{{ data.currentPrice | currency: 'BRL' }}</p>
+        <p class="price__info">{{ data.priceInfo }}</p>
+      </div>
+      <button class="button button__primary button--rounded">Comprar</button>
+    </section>
+  </div>
+</main>
